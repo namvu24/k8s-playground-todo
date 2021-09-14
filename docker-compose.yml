@@ -1,0 +1,27 @@
+version: "3"
+services:
+  api:
+    build:
+      context: ./api/
+    volumes:
+      - static:/app/static
+    networks:
+      - app-network
+    ports:
+      - 8001:8000
+
+  ui:
+    build:
+      context: ./ui/
+    networks:
+      - app-network
+    ports:
+      - 80:8080
+    environment:
+      NODE_ENV: production
+
+networks:
+  app-network:
+
+volumes:
+  static:
