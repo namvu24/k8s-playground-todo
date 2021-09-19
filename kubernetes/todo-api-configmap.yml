@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: todo-api-config
+data:
+  DJANGO_LOGLEVEL: "info"
+  DJANGO_DEBUG: "True"
+  DJANGO_ALLOWED_HOSTS: "*"
+  DATABASE_ENGINE: "postgresql_psycopg2"
+  DATABASE_NAME: "polls"
+  DATABASE_USERNAME: "polls@ii-postgres-server"
+  DATABASE_HOST: "ii-postgres-server.postgres.database.azure.com"
+  DATABASE_PORT: "5432"
